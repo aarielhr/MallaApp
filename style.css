@@ -1,0 +1,92 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h4 {
+    color: #003366;
+}
+
+h2 {
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+h4 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.malla-curricular {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.año {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.semestres-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para los semestres */
+    gap: 20px;
+}
+
+.semestre {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* --- ESTILOS DE ESTADO --- */
+
+.materia {
+    border: 1px solid;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    user-select: none; /* Evita que se seleccione el texto */
+}
+
+/* 1. ESTADO: LOCKED (Bloqueado) - Gris */
+.materia.locked {
+    background-color: #f1f1f1; /* Gris claro */
+    border-color: #d1d1d1;
+    color: #888;
+    cursor: not-allowed; /* Cursor de "no permitido" */
+}
+
+/* 2. ESTADO: AVAILABLE (Disponible) - Amarillo */
+.materia.available {
+    background-color: #fff9c4; /* Amarillo claro */
+    border-color: #fce000;
+    color: #5d5000;
+    cursor: pointer; /* Manito para hacer clic */
+}
+.materia.available:hover {
+    background-color: #fff176; /* Amarillo más fuerte al pasar el mouse */
+}
+
+/* 3. ESTADO: APPROVED (Aprobado) - Verde */
+.materia.approved {
+    background-color: #d4edda; /* Verde claro */
+    border-color: #a3d0a5;
+    color: #155724;
+    text-decoration: line-through;
+    cursor: pointer; /* Permitimos clic para "des-aprobar" */
+}
+.materia.approved:hover {
+    background-color: #c3e6cb;
+}
